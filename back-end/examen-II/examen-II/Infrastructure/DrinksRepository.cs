@@ -17,6 +17,7 @@ namespace examen_II.Infrastructure
                 if (DrinkInfoDataBase.drinksTable[i].name == drink)
                 {
                     DrinkInfoDataBase.drinksTable[i].available = DrinkInfoDataBase.drinksTable[i].available - quantity;
+                    break;
                 }
             }
             return true;

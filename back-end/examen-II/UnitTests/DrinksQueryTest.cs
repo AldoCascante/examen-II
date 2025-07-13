@@ -173,5 +173,6 @@ namespace UnitTests
 
             Assert.That(outcome, Is.EqualTo(expectedOutcome));
         }
+
     }
 }

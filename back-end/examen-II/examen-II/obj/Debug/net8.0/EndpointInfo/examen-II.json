@@ -18,7 +18,7 @@
       }
     },
     "/api/VedingMachine/BuyDrinks": {
-      "get": {
+      "post": {
         "tags": [
           "VedingMachine"
         ],

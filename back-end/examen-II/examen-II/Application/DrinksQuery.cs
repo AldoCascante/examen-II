@@ -63,7 +63,20 @@ namespace examen_II.Application
 
         public bool CheckAvailability(TransaccionModel order)
         {
-            List<DrinkInfoDTO> inventory = drinksRepository.GetAvailableDrinks();
+            List<DrinkInfoDTO> temp = drinksRepository.GetAvailableDrinks();
+            List<DrinkInfoDTO> inventory = new List<DrinkInfoDTO>(temp.Count);
+
+            temp.ForEach((item) =>
+            {
+                inventory.Add(new DrinkInfoDTO
+                {
+                    name = item.name,
+                    available = item.available,
+                    price = item.price,
+                });
+            });
+
+
             for (int i = 0;i < order.drinkOrders.Count; i = i + drinkOrderSize)
             {
                 for (int j = 0; j < inventory.Count; j++)

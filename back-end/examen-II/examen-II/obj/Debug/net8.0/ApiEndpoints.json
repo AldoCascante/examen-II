@@ -3,7 +3,7 @@
     "ContainingType": "backend_planilla.Controllers.VedingMachineController",
     "Method": "BuyDrinks",
     "RelativePath": "api/VedingMachine/BuyDrinks",
-    "HttpMethod": "GET",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [

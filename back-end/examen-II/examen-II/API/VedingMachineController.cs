@@ -1,4 +1,5 @@
-﻿using examen_II.Application;
+﻿using examen_II;
+using examen_II.Application;
 using examen_II.Domain;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,11 +30,12 @@ namespace backend_planilla.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpPost]
         public IActionResult BuyDrinks(TransaccionModel order)
         {
             try
             {
+                int a = DrinkInfoDataBase.drinksTable[0].available;
                 if (!drinksQuery.ValidateOrder(order)) { throw new Exception("Orden invalida"); }
                 if (!drinksQuery.CheckAvailability(order)) { throw new Exception("Bebidas insuficientes en la maquina"); }
                 drinksQuery.BuyDrinks(order);

@@ -43,10 +43,10 @@
       <div class="display-window" v-show="!OutOfOrder.value">
       <div v-show="!infoLocal.addingDrink"> Total de refrescos: {{ infoLocal.drinksTotal }} </div>
       <div v-show="!infoLocal.addingDrink"> Costo total: {{ infoLocal.costTotal }} </div>
-      <div v-show="!infoLocal.addingDrink"> Vuelto: </div>
+      <div v-show="!infoLocal.addingDrink"> Vuelto: {{ infoLocal.cashAvailable - infoLocal.costTotal }}</div>
       <div v-show="infoLocal.addingDrink"> Cantidad: {{ infoLocal.newQuantity }} </div>
       </div>
-      <div class="display-window" v-show="OutOfOrder.value"> Maquina fuera de servicio </div>
+      <div class="display-window" v-show="OutOfOrder.value"> {{ ErrorMessage }} </div>
       
       <div>
       <button class="btn" @click="accept" style="display: inline-block; width: 30%;"> Aceptar </button>
@@ -68,6 +68,7 @@
 import { reactive, ref, onMounted } from 'vue'
 import axios from 'axios'
 var OutOfOrder = ref(0)
+var ErrorMessage = ref("")
 var transactionInfo = reactive(
   {
     thousandBills: 0,
@@ -140,6 +141,7 @@ function cancel() {
     infoLocal.cashAvailable = 0;
     infoLocal.costTotal = 0;
     infoLocal.addingDrink = 0;
+    infoLocal.drinksTotal
   }
 }
 
@@ -148,10 +150,13 @@ function accept() {
     addDrink(infoLocal.newDrink, infoLocal.newQuantity, infoLocal.newPrice);
     infoLocal.addingDrink = 0;
     infoLocal.newQuantity = 1;
-    //todo: axios post compra y update
   } else {
-    infoLocal.cashAvailable = 0;
-    infoLocal.costTotal = 0;
+    if (infoLocal.drinksTotal > 0) {
+      BuyDrinks();
+      infoLocal.cashAvailable = 0;
+      infoLocal.costTotal = 0;
+      infoLocal.drinksTotal = 0;
+    }
   }
 }
 
@@ -188,6 +193,35 @@ function updateDrinksInfo() {
   } catch (error) {
     OutOfOrder.value = 1;
   }
+}
+
+function BuyDrinks() {
+  
+  const request = {
+    thousandBills: transactionInfo.thousandBills,
+    fiveHundredCoins: transactionInfo.fiveHundredCoins,
+    oneHundredCoins: transactionInfo.oneHundredCoins,
+    fiftyCoins: transactionInfo.fiftyCoins,
+    twentyFiveCoins: transactionInfo.twentyFiveCoins,
+    drinkOrders: []
+  }
+
+  transactionInfo.drinks.forEach((element) => request.drinkOrders.push(element.toString()));
+  console.log(request);
+  try {
+    axios.post(`https://localhost:7180/api/VedingMachine/BuyDrinks`, request ).then(() => {
+     window.location.href = "/";
+    })
+  } catch (error) {
+    OutOfOrder.value = 1;
+  }
+
+  transactionInfo.thousandBills = 0,
+  transactionInfo.fiveHundredCoins = 0,
+  transactionInfo.oneHundredCoins = 0,
+  transactionInfo.fiftyCoins = 0,
+  transactionInfo.twentyFiveCoins = 0,
+  transactionInfo.drinks = [];
 }
 
 onMounted(() => {
