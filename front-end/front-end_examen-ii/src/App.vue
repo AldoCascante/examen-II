@@ -31,7 +31,7 @@
 
   <div class="drinks-input">
     <div class="drinks-display">
-      <div class="drink-info" v-for="(info, i) in drinksAvailable" :key="i" :value="i">
+      <div class="drink-info" v-for="(info, i) in drinksAvailable.information" :key="i" :value="i">
       <div> {{ info.name }} </div>
       <div> Cantidad disponible {{ info.available }} </div>
       <div> Precio: ₡{{ info.price }} </div>
@@ -40,12 +40,13 @@
     </div>
 
     <div class="button-display">
-      <div class="display-window">
+      <div class="display-window" v-show="!OutOfOrder.value">
       <div v-show="!infoLocal.addingDrink"> Total de refrescos: {{ infoLocal.drinksTotal }} </div>
       <div v-show="!infoLocal.addingDrink"> Costo total: {{ infoLocal.costTotal }} </div>
       <div v-show="!infoLocal.addingDrink"> Vuelto: </div>
       <div v-show="infoLocal.addingDrink"> Cantidad: {{ infoLocal.newQuantity }} </div>
       </div>
+      <div class="display-window" v-show="OutOfOrder.value"> Maquina fuera de servicio </div>
       
       <div>
       <button class="btn" @click="accept" style="display: inline-block; width: 30%;"> Aceptar </button>
@@ -64,8 +65,9 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue'
-//import axios from 'axios'
+import { reactive, ref, onMounted } from 'vue'
+import axios from 'axios'
+var OutOfOrder = ref(0)
 var transactionInfo = reactive(
   {
     thousandBills: 0,
@@ -87,7 +89,7 @@ var infoLocal = reactive(
     newPrice: 1,
   }
 ) 
-var drinksAvailable = reactive( [
+var drinksAvailable = reactive( {information: [
   {
     name: 'DrinkTemplate1',
     available: 5,
@@ -98,7 +100,7 @@ var drinksAvailable = reactive( [
     available: 6,
     price: 200
   }
-] )
+] })
 
 function loadCash(amount) {
   infoLocal.cashAvailable = infoLocal.cashAvailable + amount;
@@ -146,7 +148,7 @@ function accept() {
     addDrink(infoLocal.newDrink, infoLocal.newQuantity, infoLocal.newPrice);
     infoLocal.addingDrink = 0;
     infoLocal.newQuantity = 1;
-    //todo: axios post compra
+    //todo: axios post compra y update
   } else {
     infoLocal.cashAvailable = 0;
     infoLocal.costTotal = 0;
@@ -175,6 +177,22 @@ function buy(name, price) {
   infoLocal.newPrice = price;
   infoLocal.newQuantity = 1;
 }
+
+function updateDrinksInfo() {
+  try {
+    axios.get(`https://localhost:7180/api/VedingMachine/GetAvailableDrinks`)
+    .then((response) => {
+      drinksAvailable.information = response.data;
+    });
+
+  } catch (error) {
+    OutOfOrder.value = 1;
+  }
+}
+
+onMounted(() => {
+  updateDrinksInfo()
+})
 
 </script>
 
