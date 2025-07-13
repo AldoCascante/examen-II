@@ -21,12 +21,6 @@ C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net
 C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\staticwebassets\msbuild.examen-II.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\staticwebassets\msbuild.examen-II.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\staticwebassets\msbuild.build.examen-II.props
-C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.examen-II.props
-C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.examen-II.props
-C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\examen-II.csproj.Up2Date
 C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\examen-II.dll
@@ -37,3 +31,8 @@ C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net
 C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\examen-II.sourcelink.json
 C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\bin\Debug\net8.0\Castle.Core.dll
 C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\bin\Debug\net8.0\Moq.dll
+C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\staticwebassets.build.json.cache
