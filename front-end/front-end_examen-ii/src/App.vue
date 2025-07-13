@@ -48,7 +48,7 @@
       </div>
       <div class="display-window" v-show="infoLocal.OutOfOrder  && !infoLocal.changeDisplay"> {{ infoLocal.ErrorMessage }} </div>
       <div class="display-window" v-show="infoLocal.changeDisplay">
-        <div>Vuelto: {{ infoLocal.cashAvailable - infoLocal.costTotal }}</div>
+        <div>Vuelto: {{ infoLocal.changeCoins.total }}</div>
         <div>Desglose:</div>
         <div v-show="infoLocal.changeCoins.fiveHundredCoins"> {{ infoLocal.changeCoins.fiveHundredCoins }} moneda de ₡500</div>
         <div v-show="infoLocal.changeCoins.oneHundredCoins"> {{ infoLocal.changeCoins.oneHundredCoins }} moneda de ₡100</div>
@@ -177,6 +177,7 @@ function accept() {
     infoLocal.addingDrink = 0;
     infoLocal.newQuantity = 1;
   } else if (infoLocal.drinksTotal > 0) {
+    infoLocal.changeCoins.total = infoLocal.cashAvailable - infoLocal.costTotal
     BuyDrinks();
     infoLocal.cashAvailable = 0;
     infoLocal.costTotal = 0;
@@ -214,8 +215,7 @@ async function updateDrinksInfo() {
       drinksAvailable.information = response.data;
     });
   } catch (error) {
-    infoLocal.ErrorMessage = error.response.data;
-    infoLocal.OutOfOrder = 1;
+    infoLocal.ErrorMessage = 'Error obteniendo bebidas';
   }
 }
 
