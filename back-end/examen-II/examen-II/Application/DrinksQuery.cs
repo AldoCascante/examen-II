@@ -81,8 +81,11 @@ namespace examen_II.Application
             return true;
         }
 
-        public bool CheckAvailability(TransaccionModel order)
+        public TransaccionModel CheckAvailability(TransaccionModel order)
         {
+            TransaccionModel change = new TransaccionModel();
+            change.drinkOrders = new List<string>();
+
             try
             {
                 List<DrinkInfoDTO> temp = drinksRepository.GetAvailableDrinks();
@@ -120,12 +123,19 @@ namespace examen_II.Application
                 totalCashInput += order.fiftyCoins * 50;
                 totalCashInput += order.twentyFiveCoins * 25;
                 if (totalCashInput < totalCost) { throw new Exception("Monto insuficiente"); }
+
+                int vuelto = totalCashInput - totalCost;
+
+                change.fiveHundredCoins = 1;
+                change.oneHundredCoins = 1;
+                change.fiftyCoins = 1;
+                change.twentyFiveCoins = 1;
             }
             catch (Exception)
             {
                 throw;
             }
-            return true;
+            return change;
         }
 
         private bool Contains(List<DrinkInfoDTO> inventory, string drinkName)

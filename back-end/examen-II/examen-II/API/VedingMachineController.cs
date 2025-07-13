@@ -36,9 +36,9 @@ namespace backend_planilla.Controllers
             try
             {
                 if (!drinksQuery.ValidateOrder(order)) { throw new Exception("Orden invalida"); }
-                drinksQuery.CheckAvailability(order);
+                TransaccionModel change = drinksQuery.CheckAvailability(order);
                 drinksQuery.BuyDrinks(order);
-                return Ok(true);
+                return Ok(change);
             }
             catch (Exception exeption)
             {

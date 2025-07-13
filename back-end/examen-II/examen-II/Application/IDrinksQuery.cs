@@ -7,6 +7,6 @@ namespace examen_II.Application
         public List<DrinkInfoDTO>? GetAvailableDrinks();
         public bool BuyDrinks(TransaccionModel order);
         public bool ValidateOrder(TransaccionModel order);
-        public bool CheckAvailability(TransaccionModel order);
+        public TransaccionModel CheckAvailability(TransaccionModel order);
     }
 }

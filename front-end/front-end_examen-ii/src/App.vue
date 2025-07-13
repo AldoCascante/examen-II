@@ -40,13 +40,21 @@
     </div>
 
     <div class="button-display">
-      <div class="display-window" v-show="!infoLocal.OutOfOrder">
+      <div class="display-window" v-show="!infoLocal.OutOfOrder && !infoLocal.changeDisplay">
       <div v-show="!infoLocal.addingDrink"> Total de refrescos: {{ infoLocal.drinksTotal }} </div>
       <div v-show="!infoLocal.addingDrink"> Costo total: {{ infoLocal.costTotal }} </div>
       <div v-show="!infoLocal.addingDrink"> Vuelto: {{ infoLocal.cashAvailable - infoLocal.costTotal }}</div>
       <div v-show="infoLocal.addingDrink"> Cantidad: {{ infoLocal.newQuantity }} </div>
       </div>
-      <div class="display-window" v-show="infoLocal.OutOfOrder"> {{ infoLocal.ErrorMessage }} </div>
+      <div class="display-window" v-show="infoLocal.OutOfOrder  && !infoLocal.changeDisplay"> {{ infoLocal.ErrorMessage }} </div>
+      <div class="display-window" v-show="infoLocal.changeDisplay">
+        <div>Vuelto: {{ infoLocal.cashAvailable - infoLocal.costTotal }}</div>
+        <div>Desglose:</div>
+        <div v-show="infoLocal.changeCoins.fiveHundredCoins"> {{ infoLocal.changeCoins.fiveHundredCoins }} moneda de ₡500</div>
+        <div v-show="infoLocal.changeCoins.oneHundredCoins"> {{ infoLocal.changeCoins.oneHundredCoins }} moneda de ₡100</div>
+        <div v-show="infoLocal.changeCoins.fiftyCoins"> {{ infoLocal.changeCoins.fiftyCoins }} moneda de ₡50</div>
+        <div v-show="infoLocal.changeCoins.twentyFiveCoins"> {{ infoLocal.changeCoins.twentyFiveCoins }} moneda de ₡25</div>
+      </div>
       
       <div>
       <button class="btn" @click="accept" style="display: inline-block; width: 30%;"> Aceptar </button>
@@ -87,7 +95,15 @@ var infoLocal = reactive(
     newQuantity: 1,
     newPrice: 1,
     OutOfOrder: 0,
-    ErrorMessage: ""
+    ErrorMessage: "",
+    changeDisplay: 0,
+    changeCoins: {
+      fiveHundredCoins: 0,
+      oneHundredCoins: 0,
+      fiftyCoins: 0,
+      twentyFiveCoins: 0,
+      total: 0
+    }
   }
 ) 
 var drinksAvailable = reactive( {information: [
@@ -134,7 +150,9 @@ function addDrink(name, quantity, price) {
 }
 
 function cancel() {
-  if (infoLocal.OutOfOrder === 1) {
+  if (infoLocal.changeDisplay === 1) {
+    infoLocal.changeDisplay = 0;
+  } else if (infoLocal.OutOfOrder === 1) {
     infoLocal.ErrorMessage = "";
     infoLocal.OutOfOrder = 0;
   } else if (infoLocal.addingDrink === 1) {
@@ -149,7 +167,12 @@ function cancel() {
 }
 
 function accept() {
-  if (infoLocal.addingDrink === 1) {
+  if (infoLocal.changeDisplay === 1) {
+    infoLocal.changeDisplay = 0;
+  } else if (infoLocal.OutOfOrder === 1) {
+    infoLocal.ErrorMessage = "";
+    infoLocal.OutOfOrder = 0;
+  } else if (infoLocal.addingDrink === 1) {
     addDrink(infoLocal.newDrink, infoLocal.newQuantity, infoLocal.newPrice);
     infoLocal.addingDrink = 0;
     infoLocal.newQuantity = 1;
@@ -158,7 +181,6 @@ function accept() {
     infoLocal.cashAvailable = 0;
     infoLocal.costTotal = 0;
     infoLocal.drinksTotal = 0;
-    updateDrinksInfo();
   }
 }
 
@@ -191,7 +213,6 @@ async function updateDrinksInfo() {
     .then((response) => {
       drinksAvailable.information = response.data;
     });
-
   } catch (error) {
     infoLocal.ErrorMessage = error.response.data;
     infoLocal.OutOfOrder = 1;
@@ -211,8 +232,13 @@ async function BuyDrinks() {
   transactionInfo.drinks.forEach((element) => request.drinkOrders.push(element.toString()));
 
   try {
-    await axios.post(`https://localhost:7180/api/VedingMachine/BuyDrinks`, request ).then(() => {
-     window.location.href = "/";
+    await axios.post(`https://localhost:7180/api/VedingMachine/BuyDrinks`, request ).then((response) => {
+      infoLocal.changeCoins.fiveHundredCoins = response.data.fiveHundredCoins;
+      infoLocal.changeCoins.oneHundredCoins = response.data.oneHundredCoins;
+      infoLocal.changeCoins.fiftyCoins = response.data.fiftyCoins;
+      infoLocal.changeCoins.twentyFiveCoins = response.data.twentyFiveCoins;
+      infoLocal.changeDisplay = 1;
+      updateDrinksInfo();
     })
   } catch (error) {
     infoLocal.ErrorMessage = error.response.data;
