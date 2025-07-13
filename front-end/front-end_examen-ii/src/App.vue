@@ -40,13 +40,13 @@
     </div>
 
     <div class="button-display">
-      <div class="display-window" v-show="!OutOfOrder.value">
+      <div class="display-window" v-show="!infoLocal.OutOfOrder">
       <div v-show="!infoLocal.addingDrink"> Total de refrescos: {{ infoLocal.drinksTotal }} </div>
       <div v-show="!infoLocal.addingDrink"> Costo total: {{ infoLocal.costTotal }} </div>
       <div v-show="!infoLocal.addingDrink"> Vuelto: {{ infoLocal.cashAvailable - infoLocal.costTotal }}</div>
       <div v-show="infoLocal.addingDrink"> Cantidad: {{ infoLocal.newQuantity }} </div>
       </div>
-      <div class="display-window" v-show="OutOfOrder.value"> {{ ErrorMessage }} </div>
+      <div class="display-window" v-show="infoLocal.OutOfOrder"> {{ infoLocal.ErrorMessage }} </div>
       
       <div>
       <button class="btn" @click="accept" style="display: inline-block; width: 30%;"> Aceptar </button>
@@ -65,10 +65,8 @@
 </template>
 
 <script setup>
-import { reactive, ref, onMounted } from 'vue'
+import { reactive, onMounted } from 'vue'
 import axios from 'axios'
-var OutOfOrder = ref(0)
-var ErrorMessage = ref("")
 var transactionInfo = reactive(
   {
     thousandBills: 0,
@@ -88,6 +86,8 @@ var infoLocal = reactive(
     newDrink: '',
     newQuantity: 1,
     newPrice: 1,
+    OutOfOrder: 0,
+    ErrorMessage: ""
   }
 ) 
 var drinksAvailable = reactive( {information: [
@@ -134,7 +134,10 @@ function addDrink(name, quantity, price) {
 }
 
 function cancel() {
-  if (infoLocal.addingDrink === 1) {
+  if (infoLocal.OutOfOrder === 1) {
+    infoLocal.ErrorMessage = "";
+    infoLocal.OutOfOrder = 0;
+  } else if (infoLocal.addingDrink === 1) {
     infoLocal.addingDrink = 0;
     infoLocal.newQuantity = 1;
   } else {
@@ -150,13 +153,12 @@ function accept() {
     addDrink(infoLocal.newDrink, infoLocal.newQuantity, infoLocal.newPrice);
     infoLocal.addingDrink = 0;
     infoLocal.newQuantity = 1;
-  } else {
-    if (infoLocal.drinksTotal > 0) {
-      BuyDrinks();
-      infoLocal.cashAvailable = 0;
-      infoLocal.costTotal = 0;
-      infoLocal.drinksTotal = 0;
-    }
+  } else if (infoLocal.drinksTotal > 0) {
+    BuyDrinks();
+    infoLocal.cashAvailable = 0;
+    infoLocal.costTotal = 0;
+    infoLocal.drinksTotal = 0;
+    updateDrinksInfo();
   }
 }
 
@@ -183,19 +185,20 @@ function buy(name, price) {
   infoLocal.newQuantity = 1;
 }
 
-function updateDrinksInfo() {
+async function updateDrinksInfo() {
   try {
-    axios.get(`https://localhost:7180/api/VedingMachine/GetAvailableDrinks`)
+    await axios.get(`https://localhost:7180/api/VedingMachine/GetAvailableDrinks`)
     .then((response) => {
       drinksAvailable.information = response.data;
     });
 
   } catch (error) {
-    OutOfOrder.value = 1;
+    infoLocal.ErrorMessage = error.response.data;
+    infoLocal.OutOfOrder = 1;
   }
 }
 
-function BuyDrinks() {
+async function BuyDrinks() {
   
   const request = {
     thousandBills: transactionInfo.thousandBills,
@@ -205,15 +208,15 @@ function BuyDrinks() {
     twentyFiveCoins: transactionInfo.twentyFiveCoins,
     drinkOrders: []
   }
-
   transactionInfo.drinks.forEach((element) => request.drinkOrders.push(element.toString()));
-  console.log(request);
+
   try {
-    axios.post(`https://localhost:7180/api/VedingMachine/BuyDrinks`, request ).then(() => {
+    await axios.post(`https://localhost:7180/api/VedingMachine/BuyDrinks`, request ).then(() => {
      window.location.href = "/";
     })
   } catch (error) {
-    OutOfOrder.value = 1;
+    infoLocal.ErrorMessage = error.response.data;
+    infoLocal.OutOfOrder = 1;
   }
 
   transactionInfo.thousandBills = 0,
