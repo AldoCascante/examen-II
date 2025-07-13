@@ -16,7 +16,74 @@
           }
         }
       }
+    },
+    "/api/VedingMachine/BuyDrinks": {
+      "get": {
+        "tags": [
+          "VedingMachine"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransaccionModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransaccionModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransaccionModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
-  "components": { }
+  "components": {
+    "schemas": {
+      "TransaccionModel": {
+        "type": "object",
+        "properties": {
+          "thousandBills": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fiveHundredCoins": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "oneHundredCoins": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fiftyCoins": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "twentyFiveCoins": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "drinkOrders": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
 }

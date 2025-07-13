@@ -5,5 +5,6 @@ namespace examen_II.Application
     public interface IDrinksQuery
     {
         public List<DrinkInfoDTO>? GetAvailableDrinks();
+        public bool BuyDrinks(TransaccionModel order);
     }
 }

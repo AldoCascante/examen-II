@@ -9,5 +9,10 @@ namespace examen_II.Infrastructure
             List<DrinkInfoDTO> drinksAvailable = DrinkInfoDataBase.drinksTable;
             return drinksAvailable;
         }
+
+        public bool buyDrink(string drink, int quantity)
+        {
+            return true;
+        }
     }
 }

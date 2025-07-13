@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("examen-II")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c439982a29bf481783e157a7e86255a54dc4787e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7437d6e0732fed60b6da084556aa4a0c1b743a00")]
 [assembly: System.Reflection.AssemblyProductAttribute("examen-II")]
 [assembly: System.Reflection.AssemblyTitleAttribute("examen-II")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -2,7 +2,7 @@
 
 ## Paquetes necesarios para correr el proyecto
 
-Colocarse en la carpeta raiz del proyecto ".../backend-planilla" y correr los siguientes comandos:
+Colocarse en la carpeta raiz del proyecto ".../examen-ii" y correr los siguientes comandos:
   * `dotnet add package Microsoft.AspNetCore.Mvc.Core`
   * `dotnet add package Microsoft.AspNetCore.Http.Abstractions`
   * `dotnet add package Moq`
