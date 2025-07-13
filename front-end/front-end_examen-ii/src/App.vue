@@ -35,17 +35,28 @@
       <div> {{ info.name }} </div>
       <div> Cantidad disponible {{ info.available }} </div>
       <div> Precio: ₡{{ info.price }} </div>
-      <button class="btn" @click="loadCash(25)"> Comprar </button>
+      <button class="btn" @click="buy(info.name, info.price)"> Comprar </button>
       </div>
     </div>
 
-    <div class="button-display" style="display: inline-block; width: 50%;">
+    <div class="button-display">
       <div class="display-window">
-      <div v-show="1"> Total de refrescos: </div>
-      <div v-show="1"> Costo total: {{ infoLocal.costoTotal }}</div>
-      <div v-show="1"> Vuelto: </div>
+      <div v-show="!infoLocal.addingDrink"> Total de refrescos: {{ infoLocal.drinksTotal }} </div>
+      <div v-show="!infoLocal.addingDrink"> Costo total: {{ infoLocal.costTotal }} </div>
+      <div v-show="!infoLocal.addingDrink"> Vuelto: </div>
+      <div v-show="infoLocal.addingDrink"> Cantidad: {{ infoLocal.newQuantity }} </div>
       </div>
-      <button class="btn" @click="addDrink('drink1', 100, 5)"> Comprar </button>
+      
+      <div>
+      <button class="btn" @click="accept" style="display: inline-block; width: 30%;"> Aceptar </button>
+      <button class="btn" @click="cancel" style="display: inline-block; width: 30%;"> Cancelar </button>
+      </div>
+
+      <div>
+      <div class="drink-info" style="">Cambiar cantidad </div>
+      <button class="btn" @click="plus" style="background-color: #2C2C2C; display: inline-block; width: 15%;"> + </button>
+      <button class="btn" @click="minus" style="background-color: #2C2C2C; display: inline-block; width: 15%;"> - </button>
+      </div>
     </div>
   </div>
   
@@ -62,13 +73,18 @@ var transactionInfo = reactive(
     oneHundredCoins: 0,
     fiftyCoins: 0,
     twentyFiveCoins: 0,
-    drinks: []
+    drinks: [],
   }
 ) 
 var infoLocal = reactive(
   {
-    costoTotal: 0,
+    costTotal: 0,
     cashAvailable: 0,
+    drinksTotal: 0,
+    addingDrink: 0,
+    newDrink: '',
+    newQuantity: 1,
+    newPrice: 1,
   }
 ) 
 var drinksAvailable = reactive( [
@@ -88,33 +104,77 @@ function loadCash(amount) {
   infoLocal.cashAvailable = infoLocal.cashAvailable + amount;
 
   if (amount === 1000) {
-    transactionInfo.thousandBills = transactionInfo.thousandBills + 1
+    transactionInfo.thousandBills = transactionInfo.thousandBills + 1;
   }
 
   if (amount === 500) {
-    transactionInfo.fiveHundredCoins = transactionInfo.fiveHundredCoins + 1
+    transactionInfo.fiveHundredCoins = transactionInfo.fiveHundredCoins + 1;
   }
 
   if (amount === 100) {
-    transactionInfo.oneHundredCoins = transactionInfo.oneHundredCoins + 1
+    transactionInfo.oneHundredCoins = transactionInfo.oneHundredCoins + 1;
   }
 
   if (amount === 50) {
-    transactionInfo.fiftyCoins = transactionInfo.fiftyCoins + 1
+    transactionInfo.fiftyCoins = transactionInfo.fiftyCoins + 1;
   }
 
   if (amount === 25) {
-    transactionInfo.twentyFiveCoins = transactionInfo.twentyFiveCoins + 1
+    transactionInfo.twentyFiveCoins = transactionInfo.twentyFiveCoins + 1;
+  }
+}
+
+function addDrink(name, quantity, price) {
+  infoLocal.costTotal = infoLocal.costTotal + (quantity*price);
+  infoLocal.drinksTotal = infoLocal.drinksTotal + quantity;
+  transactionInfo.drinks.push(name, quantity);
+}
+
+function cancel() {
+  if (infoLocal.addingDrink === 1) {
+    infoLocal.addingDrink = 0;
+    infoLocal.newQuantity = 1;
+  } else {
+    infoLocal.cashAvailable = 0;
+    infoLocal.costTotal = 0;
+    infoLocal.addingDrink = 0;
+  }
+}
+
+function accept() {
+  if (infoLocal.addingDrink === 1) {
+    addDrink(infoLocal.newDrink, infoLocal.newQuantity, infoLocal.newPrice);
+    infoLocal.addingDrink = 0;
+    infoLocal.newQuantity = 1;
+    //todo: axios post compra
+  } else {
+    infoLocal.cashAvailable = 0;
+    infoLocal.costTotal = 0;
+  }
+}
+
+function plus() {
+  if (infoLocal.addingDrink === 1) {
+    infoLocal.newQuantity = infoLocal.newQuantity + 1;
+  }
+}
+
+function minus() {
+  if (infoLocal.addingDrink === 1) {
+    infoLocal.newQuantity = infoLocal.newQuantity - 1;
   }
 
-  console.log(transactionInfo);
+  if (infoLocal.newQuantity < 1) {
+    infoLocal.newQuantity = 1;
+  }
 }
 
-function addDrink(name, price, quantity) {
-  transactionInfo.drinks.push(name, price*quantity);
-  console.log(transactionInfo.drinks);
+function buy(name, price) {
+  infoLocal.addingDrink = 1;
+  infoLocal.newDrink = name;
+  infoLocal.newPrice = price;
+  infoLocal.newQuantity = 1;
 }
-
 
 </script>
 
@@ -143,6 +203,7 @@ function addDrink(name, price, quantity) {
   background-color: black;
   color: white;
   font-family: Verdana;
+  text-align: left;
 }
 
 .cash-select {
@@ -177,5 +238,11 @@ function addDrink(name, price, quantity) {
   cursor: pointer;
   margin: 1rem;
   font-size: 20px;
+}
+
+.button-display {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
 }
 </style>
