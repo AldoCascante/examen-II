@@ -12,6 +12,13 @@ namespace examen_II.Infrastructure
 
         public bool buyDrink(string drink, int quantity)
         {
+            for (int i = 0; i < DrinkInfoDataBase.drinksTable.Count; i++)
+            {
+                if (DrinkInfoDataBase.drinksTable[i].name == drink)
+                {
+                    DrinkInfoDataBase.drinksTable[i].available = DrinkInfoDataBase.drinksTable[i].available - quantity;
+                }
+            }
             return true;
         }
     }

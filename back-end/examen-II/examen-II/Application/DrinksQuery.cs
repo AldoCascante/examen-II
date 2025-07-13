@@ -6,13 +6,16 @@ namespace examen_II.Application
     public class DrinksQuery : IDrinksQuery
     {
         IDrinksRepository drinksRepository;
+        int drinkOrderSize = 2;
         public DrinksQuery() {
             drinksRepository = new DrinksRepository();
+            drinkOrderSize = 2;
         }
 
         public DrinksQuery(IDrinksRepository repository)
         {
             drinksRepository = repository;
+            drinkOrderSize = 2;
         }
 
         public List<DrinkInfoDTO>? GetAvailableDrinks()
@@ -25,12 +28,14 @@ namespace examen_II.Application
         {
             try
             {
-                if (!ValidateOrder(order)) { return false; }
-                if (!ProcessOrder(order)) { return false; }
+                for (int i = 0; i < order.drinkOrders.Count; i = i + drinkOrderSize)
+                {
+                    drinksRepository.buyDrink(order.drinkOrders[i], int.Parse(order.drinkOrders[i + 1]));
+                }
             }
             catch (Exception)
             {
-                throw new Exception("Solicitud de bebidas invalida");
+                throw new Exception("Error inesperado");
             }
 
             return true;
@@ -39,15 +44,15 @@ namespace examen_II.Application
         public bool ValidateOrder(TransaccionModel order)
         {
             List<DrinkInfoDTO> drinksInventory = drinksRepository.GetAvailableDrinks();
-            if (order.drinkOrders.Count % 2 != 0) { return false; }
+            if (order.drinkOrders.Count % drinkOrderSize != 0) { return false; }
 
             for(int i = 0; i < order.drinkOrders.Count; i++)
             { if(order.drinkOrders[i] == null) { return false; } }
 
-            for (int i = 0; i < order.drinkOrders.Count; i = i + 2)
+            for (int i = 0; i < order.drinkOrders.Count; i = i + drinkOrderSize)
             { if (!Contains(drinksInventory, order.drinkOrders[i])) { return false; } }
 
-            for (int i = 1; i < order.drinkOrders.Count; i = i + 2)
+            for (int i = 1; i < order.drinkOrders.Count; i = i + drinkOrderSize)
             {
                 int isValid;
                 int.TryParse(order.drinkOrders[i], out isValid);
@@ -56,9 +61,21 @@ namespace examen_II.Application
             return true;
         }
 
-        public bool ProcessOrder(TransaccionModel order)
+        public bool CheckAvailability(TransaccionModel order)
         {
-            
+            List<DrinkInfoDTO> inventory = drinksRepository.GetAvailableDrinks();
+            for (int i = 0;i < order.drinkOrders.Count; i = i + drinkOrderSize)
+            {
+                for (int j = 0; j < inventory.Count; j++)
+                {
+                    if (inventory[j].name == order.drinkOrders[i])
+                    {
+                        inventory[j].available = inventory[j].available - int.Parse(order.drinkOrders[i + 1]);
+                        if(inventory[j].available < 0) { return false; }
+                        break;
+                    }
+                }
+            }
 
             return true;
         }

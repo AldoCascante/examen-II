@@ -50,7 +50,7 @@ namespace UnitTests
         }
 
         [Test]
-        public void BuyDrinksTestHappyPath()
+        public void ValidateOrderTestHappyPath()
         {
             TransaccionModel order = new TransaccionModel();
             order.drinkOrders = new List<string>();
@@ -58,13 +58,13 @@ namespace UnitTests
             order.drinkOrders.Add("2");
 
             bool expectedOutcome = true;
-            bool outcome = testQuery.BuyDrinks(order);
+            bool outcome = testQuery.ValidateOrder(order);
 
             Assert.That(outcome, Is.EqualTo(expectedOutcome));
         }
 
         [Test]
-        public void BuyDrinksTestOddOrderSize()
+        public void ValidateOrderTestOddOrderSize()
         {
             TransaccionModel order = new TransaccionModel();
             order.drinkOrders = new List<string>();
@@ -73,13 +73,13 @@ namespace UnitTests
             order.drinkOrders.Add("Sprite");
 
             bool expectedOutcome = false;
-            bool outcome = testQuery.BuyDrinks(order);
+            bool outcome = testQuery.ValidateOrder(order);
 
             Assert.That(outcome, Is.EqualTo(expectedOutcome));
         }
 
         [Test]
-        public void BuyDrinksTestInvalidDrink()
+        public void ValidateOrderTestInvalidDrink()
         {
             TransaccionModel order = new TransaccionModel();
             order.drinkOrders = new List<string>();
@@ -89,13 +89,13 @@ namespace UnitTests
             order.drinkOrders.Add("1");
 
             bool expectedOutcome = false;
-            bool outcome = testQuery.BuyDrinks(order);
+            bool outcome = testQuery.ValidateOrder(order);
 
             Assert.That(outcome, Is.EqualTo(expectedOutcome));
         }
 
         [Test]
-        public void BuyDrinksTestNegativeQuantity()
+        public void ValidateOrderTestNegativeQuantity()
         {
             TransaccionModel order = new TransaccionModel();
             order.drinkOrders = new List<string>();
@@ -105,13 +105,13 @@ namespace UnitTests
             order.drinkOrders.Add("1");
 
             bool expectedOutcome = false;
-            bool outcome = testQuery.BuyDrinks(order);
+            bool outcome = testQuery.ValidateOrder(order);
 
             Assert.That(outcome, Is.EqualTo(expectedOutcome));
         }
 
         [Test]
-        public void BuyDrinksTestQuantityZero()
+        public void ValidateOrderTestQuantityZero()
         {
             TransaccionModel order = new TransaccionModel();
             order.drinkOrders = new List<string>();
@@ -121,7 +121,7 @@ namespace UnitTests
             order.drinkOrders.Add("0");
 
             bool expectedOutcome = false;
-            bool outcome = testQuery.BuyDrinks(order);
+            bool outcome = testQuery.ValidateOrder(order);
 
             Assert.That(outcome, Is.EqualTo(expectedOutcome));
         }
@@ -137,7 +137,39 @@ namespace UnitTests
             order.drinkOrders.Add(null);
 
             bool expectedOutcome = false;
-            bool outcome = testQuery.BuyDrinks(order);
+            bool outcome = testQuery.ValidateOrder(order);
+
+            Assert.That(outcome, Is.EqualTo(expectedOutcome));
+        }
+
+        [Test]
+        public void CheckAvailabilityTestHappyPath()
+        {
+            TransaccionModel order = new TransaccionModel();
+            order.drinkOrders = new List<string>();
+            order.drinkOrders = new List<string>();
+            order.drinkOrders.Add("Coca Cola");
+            order.drinkOrders.Add("3");
+            order.drinkOrders.Add("Fanta");
+            order.drinkOrders.Add("1");
+
+            bool expectedOutcome = true;
+            bool outcome = testQuery.CheckAvailability(order);
+
+            Assert.That(outcome, Is.EqualTo(expectedOutcome));
+        }
+
+        [Test]
+        public void CheckAvailabilityTestUnavailable()
+        {
+            TransaccionModel order = new TransaccionModel();
+            order.drinkOrders = new List<string>();
+            order.drinkOrders = new List<string>();
+            order.drinkOrders.Add("Coca Cola");
+            order.drinkOrders.Add("3000");
+
+            bool expectedOutcome = false;
+            bool outcome = testQuery.CheckAvailability(order);
 
             Assert.That(outcome, Is.EqualTo(expectedOutcome));
         }

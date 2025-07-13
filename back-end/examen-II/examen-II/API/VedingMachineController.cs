@@ -34,13 +34,14 @@ namespace backend_planilla.Controllers
         {
             try
             {
-                bool success = drinksQuery.BuyDrinks(order);
-                if (!success) { throw new Exception("Transaccion invalida"); }
-                return Ok();
+                if (!drinksQuery.ValidateOrder(order)) { throw new Exception("Orden invalida"); }
+                if (!drinksQuery.CheckAvailability(order)) { throw new Exception("Bebidas insuficientes en la maquina"); }
+                drinksQuery.BuyDrinks(order);
+                return Ok(true);
             }
             catch (Exception exeption)
             {
-                return StatusCode(500, $"Error en compra de bebidas: {exeption.Message}");
+                return StatusCode(500, exeption.Message);
             }
         }
     }
