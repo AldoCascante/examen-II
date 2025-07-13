@@ -3,36 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|c:\\users\\aldoc\\source\\repos\\examen-ii\\back-end\\examen-ii\\examen-ii\\api\\vedingmachinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|solutionrelative:examen-ii\\api\\vedingmachinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|c:\\users\\aldoc\\source\\repos\\examen-ii\\back-end\\examen-ii\\examen-ii\\application\\drinksquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|solutionrelative:examen-ii\\application\\drinksquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0712844B-32B2-4435-A801-765B53579D2A}|UnitTests\\UnitTests.csproj|c:\\users\\aldoc\\source\\repos\\examen-ii\\back-end\\examen-ii\\unittests\\drinksquerytest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0712844B-32B2-4435-A801-765B53579D2A}|UnitTests\\UnitTests.csproj|solutionrelative:unittests\\drinksquerytest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|c:\\users\\aldoc\\source\\repos\\examen-ii\\back-end\\examen-ii\\examen-ii\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|solutionrelative:examen-ii\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|c:\\users\\aldoc\\source\\repos\\examen-ii\\back-end\\examen-ii\\examen-ii\\domain\\drinkinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|solutionrelative:examen-ii\\domain\\drinkinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|c:\\users\\aldoc\\source\\repos\\examen-ii\\back-end\\examen-ii\\examen-ii\\infrastructure\\drinksrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|solutionrelative:examen-ii\\infrastructure\\drinksrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|c:\\users\\aldoc\\source\\repos\\examen-ii\\back-end\\examen-ii\\examen-ii\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|solutionrelative:examen-ii\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|c:\\users\\aldoc\\source\\repos\\examen-ii\\back-end\\examen-ii\\examen-ii\\application\\drinksquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|solutionrelative:examen-ii\\application\\drinksquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|c:\\users\\aldoc\\source\\repos\\examen-ii\\back-end\\examen-ii\\examen-ii\\domain\\transaccionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|solutionrelative:examen-ii\\domain\\transaccionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|c:\\users\\aldoc\\source\\repos\\examen-ii\\back-end\\examen-ii\\examen-ii\\api\\vedingmachinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|solutionrelative:examen-ii\\api\\vedingmachinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|c:\\users\\aldoc\\source\\repos\\examen-ii\\back-end\\examen-ii\\examen-ii\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|solutionrelative:examen-ii\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|c:\\users\\aldoc\\source\\repos\\examen-ii\\back-end\\examen-ii\\examen-ii\\domain\\transaccionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|solutionrelative:examen-ii\\domain\\transaccionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|c:\\users\\aldoc\\source\\repos\\examen-ii\\back-end\\examen-ii\\examen-ii\\infrastructure\\drinksrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|solutionrelative:examen-ii\\infrastructure\\drinksrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,7 +58,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "DrinksQueryTest.cs",
+              "DocumentMoniker": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\UnitTests\\DrinksQueryTest.cs",
+              "RelativeDocumentMoniker": "UnitTests\\DrinksQueryTest.cs",
+              "ToolTip": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\UnitTests\\DrinksQueryTest.cs",
+              "RelativeToolTip": "UnitTests\\DrinksQueryTest.cs",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAgwLEAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-13T19:32:02.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "DrinkInfoDTO.cs",
               "DocumentMoniker": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\Domain\\DrinkInfoDTO.cs",
               "RelativeDocumentMoniker": "examen-II\\Domain\\DrinkInfoDTO.cs",
@@ -66,11 +79,12 @@
               "RelativeToolTip": "examen-II\\Domain\\DrinkInfoDTO.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAxwAMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-13T09:31:42.333Z"
+              "WhenOpened": "2025-07-13T09:31:42.333Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\Program.cs",
               "RelativeDocumentMoniker": "examen-II\\Program.cs",
@@ -78,7 +92,8 @@
               "RelativeToolTip": "examen-II\\Program.cs",
               "ViewState": "AgIAABAAAAAAAAAAAADgvxkAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-13T08:07:38.098Z"
+              "WhenOpened": "2025-07-13T08:07:38.098Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -88,13 +103,40 @@
               "RelativeDocumentMoniker": "examen-II\\Class.cs",
               "ToolTip": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\Class.cs",
               "RelativeToolTip": "examen-II\\Class.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-13T04:52:07.32Z"
+              "WhenOpened": "2025-07-13T04:52:07.32Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
+              "Title": "VedingMachineController.cs",
+              "DocumentMoniker": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\API\\VedingMachineController.cs",
+              "RelativeDocumentMoniker": "examen-II\\API\\VedingMachineController.cs",
+              "ToolTip": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\API\\VedingMachineController.cs",
+              "RelativeToolTip": "examen-II\\API\\VedingMachineController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAqwCYAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-13T03:10:24.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DrinksQuery.cs",
+              "DocumentMoniker": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\Application\\DrinksQuery.cs",
+              "RelativeDocumentMoniker": "examen-II\\Application\\DrinksQuery.cs",
+              "ToolTip": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\Application\\DrinksQuery.cs",
+              "RelativeToolTip": "examen-II\\Application\\DrinksQuery.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAAAHgAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-13T03:20:31.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "TransaccionModel.cs",
               "DocumentMoniker": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\Domain\\TransaccionModel.cs",
               "RelativeDocumentMoniker": "examen-II\\Domain\\TransaccionModel.cs",
@@ -102,36 +144,12 @@
               "RelativeToolTip": "examen-II\\Domain\\TransaccionModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-13T03:15:44.442Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "VedingMachineController.cs",
-              "DocumentMoniker": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\API\\VedingMachineController.cs",
-              "RelativeDocumentMoniker": "examen-II\\API\\VedingMachineController.cs",
-              "ToolTip": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\API\\VedingMachineController.cs",
-              "RelativeToolTip": "examen-II\\API\\VedingMachineController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAcwAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-13T03:10:24.914Z",
+              "WhenOpened": "2025-07-13T03:15:44.442Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DrinksQuery.cs",
-              "DocumentMoniker": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\Application\\DrinksQuery.cs",
-              "RelativeDocumentMoniker": "examen-II\\Application\\DrinksQuery.cs",
-              "ToolTip": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\Application\\DrinksQuery.cs",
-              "RelativeToolTip": "examen-II\\Application\\DrinksQuery.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAwwEoAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-13T03:20:31.6Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "DrinksRepository.cs",
               "DocumentMoniker": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\Infrastructure\\DrinksRepository.cs",
               "RelativeDocumentMoniker": "examen-II\\Infrastructure\\DrinksRepository.cs",
@@ -140,18 +158,6 @@
               "ViewState": "AgIAAAoAAAAAAAAAAAAcwA4AAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-13T09:14:15.262Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DrinksQueryTest.cs",
-              "DocumentMoniker": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\UnitTests\\DrinksQueryTest.cs",
-              "RelativeDocumentMoniker": "UnitTests\\DrinksQueryTest.cs",
-              "ToolTip": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\UnitTests\\DrinksQueryTest.cs",
-              "RelativeToolTip": "UnitTests\\DrinksQueryTest.cs",
-              "ViewState": "AgIAAJ4AAAAAAAAAAAASwK8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-13T05:38:10.96Z"
             }
           ]
         }

@@ -13,7 +13,7 @@ namespace UnitTests
         public void Setup()
         {
             mockRepo = new Mock<IDrinksRepository>();
-            testQuery = new DrinksQuery(mockRepo.Object);
+            testQuery = new DrinksQuery(mockRepo.Object, 2);
 
             List<DrinkInfoDTO> drinksDB = new List<DrinkInfoDTO>();
 
@@ -153,8 +153,18 @@ namespace UnitTests
             order.drinkOrders.Add("Fanta");
             order.drinkOrders.Add("1");
 
-            bool expectedOutcome = true;
-            bool outcome = testQuery.CheckAvailability(order);
+            string expectedOutcome = "Monto insuficiente";
+            string outcome = "";
+
+            try
+            {
+                testQuery.CheckAvailability(order);
+            }
+            catch (Exception exception)
+            {
+                outcome = exception.Message;
+            }
+             
 
             Assert.That(outcome, Is.EqualTo(expectedOutcome));
         }
@@ -168,8 +178,37 @@ namespace UnitTests
             order.drinkOrders.Add("Coca Cola");
             order.drinkOrders.Add("3000");
 
+            string expectedOutcome = "Bebidas insuficientes en la maquina";
+            string outcome = "";
+
+            try
+            {
+                testQuery.CheckAvailability(order);
+            }
+            catch (Exception exception)
+            {
+                outcome = exception.Message;
+            }
+
+            Assert.That(outcome, Is.EqualTo(expectedOutcome));
+        }
+
+        [Test]
+        public void ValidateOrderTestNegativeCurrency()
+        {
+            TransaccionModel order = new TransaccionModel();
+            order.drinkOrders = new List<string>();
+            order.drinkOrders.Add("Coca Cola");
+            order.drinkOrders.Add("2");
+
+            order.thousandBills = -1;
+            order.fiveHundredCoins = -1;
+            order.oneHundredCoins = -1;
+            order.fiftyCoins = -1;
+            order.twentyFiveCoins = -1;
+
             bool expectedOutcome = false;
-            bool outcome = testQuery.CheckAvailability(order);
+            bool outcome = testQuery.ValidateOrder(order);
 
             Assert.That(outcome, Is.EqualTo(expectedOutcome));
         }

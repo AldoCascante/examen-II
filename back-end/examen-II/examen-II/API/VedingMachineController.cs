@@ -35,9 +35,8 @@ namespace backend_planilla.Controllers
         {
             try
             {
-                int a = DrinkInfoDataBase.drinksTable[0].available;
                 if (!drinksQuery.ValidateOrder(order)) { throw new Exception("Orden invalida"); }
-                if (!drinksQuery.CheckAvailability(order)) { throw new Exception("Bebidas insuficientes en la maquina"); }
+                drinksQuery.CheckAvailability(order);
                 drinksQuery.BuyDrinks(order);
                 return Ok(true);
             }
