@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|c:\\users\\aldoc\\source\\repos\\examen-ii\\back-end\\examen-ii\\examen-ii\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|solutionrelative:examen-ii\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|c:\\users\\aldoc\\source\\repos\\examen-ii\\back-end\\examen-ii\\examen-ii\\application\\drinksquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|solutionrelative:examen-ii\\application\\drinksquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|c:\\users\\aldoc\\source\\repos\\examen-ii\\back-end\\examen-ii\\examen-ii\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|solutionrelative:examen-ii\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|c:\\users\\aldoc\\source\\repos\\examen-ii\\back-end\\examen-ii\\examen-ii\\api\\vedingmachinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|solutionrelative:examen-ii\\api\\vedingmachinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|c:\\users\\aldoc\\source\\repos\\examen-ii\\back-end\\examen-ii\\examen-ii\\domain\\transaccionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|solutionrelative:examen-ii\\domain\\transaccionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|c:\\users\\aldoc\\source\\repos\\examen-ii\\back-end\\examen-ii\\examen-ii\\infrastructure\\drinksrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2CF129A-B4AC-4E49-97DF-7F67C350702E}|examen-II\\examen-II.csproj|solutionrelative:examen-ii\\infrastructure\\drinksrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,28 +42,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "WeatherForecast.cs",
-              "DocumentMoniker": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\WeatherForecast.cs",
-              "RelativeDocumentMoniker": "examen-II\\WeatherForecast.cs",
-              "ToolTip": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\WeatherForecast.cs",
-              "RelativeToolTip": "examen-II\\WeatherForecast.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "TransaccionModel.cs",
+              "DocumentMoniker": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\Domain\\TransaccionModel.cs",
+              "RelativeDocumentMoniker": "examen-II\\Domain\\TransaccionModel.cs",
+              "ToolTip": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\Domain\\TransaccionModel.cs",
+              "RelativeToolTip": "examen-II\\Domain\\TransaccionModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T14:43:33.91Z",
+              "WhenOpened": "2025-07-13T03:15:44.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "VedingMachineController.cs",
+              "DocumentMoniker": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\API\\VedingMachineController.cs",
+              "RelativeDocumentMoniker": "examen-II\\API\\VedingMachineController.cs",
+              "ToolTip": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\API\\VedingMachineController.cs",
+              "RelativeToolTip": "examen-II\\API\\VedingMachineController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-13T03:10:24.914Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\Program.cs",
-              "RelativeDocumentMoniker": "examen-II\\Program.cs",
-              "ToolTip": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\Program.cs",
-              "RelativeToolTip": "examen-II\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "DrinksQuery.cs",
+              "DocumentMoniker": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\Application\\DrinksQuery.cs",
+              "RelativeDocumentMoniker": "examen-II\\Application\\DrinksQuery.cs",
+              "ToolTip": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\Application\\DrinksQuery.cs",
+              "RelativeToolTip": "examen-II\\Application\\DrinksQuery.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T14:43:33.001Z",
+              "WhenOpened": "2025-07-13T03:20:31.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DrinksRepository.cs",
+              "DocumentMoniker": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\Infrastructure\\DrinksRepository.cs",
+              "RelativeDocumentMoniker": "examen-II\\Infrastructure\\DrinksRepository.cs",
+              "ToolTip": "C:\\Users\\aldoc\\source\\repos\\examen-II\\back-end\\examen-II\\examen-II\\Infrastructure\\DrinksRepository.cs",
+              "RelativeToolTip": "examen-II\\Infrastructure\\DrinksRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-13T03:37:23.296Z",
               "EditorCaption": ""
             }
           ]

@@ -34,3 +34,4 @@ C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net
 C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\examen-II.pdb
 C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\examen-II.genruntimeconfig.cache
 C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\ref\examen-II.dll
+C:\Users\aldoc\source\repos\examen-II\back-end\examen-II\examen-II\obj\Debug\net8.0\examen-II.sourcelink.json
