@@ -143,7 +143,7 @@ namespace UnitTests
         }
 
         [Test]
-        public void CheckAvailabilityTestHappyPath()
+        public void CheckAvailabilityTestNoPayment()
         {
             TransaccionModel order = new TransaccionModel();
             order.drinkOrders = new List<string>();
